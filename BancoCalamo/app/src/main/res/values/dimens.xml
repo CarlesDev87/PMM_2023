@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textview">25dp</dimen>
+    <dimen name="common_padding_min">24dp</dimen>
+    <dimen name="text_login">20dp</dimen>
+    <dimen name="common_margin_text">90dp</dimen>
+    <dimen name="commom_margin_default">80dp</dimen>
+    <dimen name="common_padding_btn">50dp</dimen>
+    <dimen name="commom_margin_btn">30dp</dimen>
+    <dimen name="commom_margin_avatar">45dp</dimen>
+    <dimen name="padding_botones">15dp</dimen>
+
+</resources>

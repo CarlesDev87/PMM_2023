@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Banco-Calamo</string>
+    <string name="inicio">Log in</string>
+    <string name="obligatorioUser">Required</string>
+    <string name="btn_salir">Exit</string>
+    <string name="btn_entrar">Enter</string>
+    <string name="requiredPass">Required</string>
+    <string name="requiredUser">Required</string>
+    <string name="text_pass">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="hint_user">User</string>
+    <string name="hint_pass">Password</string>
+    <string name="helper_user">Required</string>
+    <string name="btn_enter">Enter</string>
+    <string name="btn_text_enter">Enter</string>
+    <string name="btn_text_exit">Exit</string>
+    <string name="saludo">Welcome</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_task">Inicio</string>
+    <string name="btn_pos_global">GLOBAL</string>
+    <string name="btn_movimientos">MOVEMENTS</string>
+    <string name="btn_transferencias">TRANSFERENCIES</string>
+    <string name="btn_cambiar_pass">CHANGE PASSWORD</string>
+    <string name="btn_promociones">PROMOTIONS</string>
+    <string name="btn_cajeros">CASHIERS</string>
+    <string name="btn_text_salir">EXIT</string>
+        <string name="text_welcome">Welcome to my bank</string>
+    <string name="btn_entrar_mayus">ENTER</string>
+    <string name="tie_oldpass">Old password</string>
+    <string name="tie_newpass">New password</string>
+    <string name="tie_repeatpass">Repeat password</string>
+    <string name="btn_chng_passwd">Change password</string>
+    <string name="ti_user">DNI not valid</string>
+    <string name="dni_empty">There must be a DNI</string>
+    <string name="new_pass">The password must match </string>
+</resources>

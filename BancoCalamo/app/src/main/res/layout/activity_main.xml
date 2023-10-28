@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_login"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            android:layout_marginBottom="@dimen/common_padding_min"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_padding_min"
+                android:paddingTop="@dimen/common_padding_min"
+                android:paddingEnd="@dimen/common_padding_min"
+                android:paddingBottom="@dimen/common_padding_min">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hombre"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_welcome"
+                    app:layout_constraintEnd_toStartOf="@id/saludo_user"
+                    app:layout_constraintTop_toTopOf="@id/constraint_welcome" />
+
+                <TextView
+                    android:id="@+id/saludo_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/commom_margin_avatar"
+                    android:text="@string/saludo"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_welcome"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="@id/constraint_welcome"
+
+                    />
+
+                <TextView
+                    android:id="@+id/dni_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintBottom_toBottomOf="@id/constraint_welcome"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_welcome"
+                    app:layout_constraintStart_toStartOf="@id/saludo_user"
+                    app:layout_constraintTop_toBottomOf="@id/saludo_user" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            android:layout_marginBottom="@dimen/common_padding_min"
+            android:visibility="visible">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_padding_min"
+                android:paddingTop="@dimen/common_padding_min"
+                android:paddingEnd="@dimen/common_padding_min"
+                android:paddingBottom="@dimen/common_padding_min">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/primer_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_pos_global"
+                    app:icon="@drawable/ic_btn1"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toTopOf="@id/constraint_buttons" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/segundo_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_movimientos"
+                    app:icon="@drawable/ic_btn2"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/primer_boton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tercer_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_transferencias"
+                    app:icon="@drawable/ic_btn3"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/segundo_boton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cuarto_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_cambiar_pass"
+                    app:icon="@drawable/ic_btn4"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/tercer_boton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/quinto_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_promociones"
+                    app:icon="@drawable/ic_btn5"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/cuarto_boton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sexto_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_cajeros"
+                    app:icon="@drawable/ic_btn6"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/quinto_boton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sept_boton"
+                    style="@style/EstiloBotones"
+                    android:text="@string/btn_text_salir"
+                    app:icon="@drawable/ic_btn7"
+                    app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
+                    app:layout_constraintStart_toStartOf="@id/constraint_buttons"
+                    app:layout_constraintTop_toBottomOf="@id/sexto_boton" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAnimationMode="scale"
+        app:hideOnScroll="true"
+        app:menu="@menu/menu_scrolling"
+        app:navigationIcon="@drawable/ic_menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_task"
+        android:src="@drawable/ic_bank"
+        app:layout_anchor="@id/bottomAppBar" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

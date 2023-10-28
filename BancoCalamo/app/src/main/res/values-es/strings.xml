@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Banco-Calamo</string>
+    <string name="inicio">Iniciar sesión</string>
+    <string name="obligatorioUser">Obligatorio</string>
+    <string name="btn_salir">Salir</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="requiredPass">Obligatorio</string>
+    <string name="requiredUser">Obligatorio</string>
+    <string name="text_pass">Introduce la contraseña</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="hint_user">Introduce el usuario</string>
+    <string name="hint_pass">Introduce la contraseña</string>
+    <string name="helper_user">Obligatorio</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_text_enter">Entrar</string>
+    <string name="btn_text_exit">Salir</string>
+    <string name="saludo">Bienvenido/a</string>
+    <string name="action_settings">Configuración</string>
+    <string name="add_task">Inicio</string>
+    <string name="btn_pos_global">POSICIÓN GLOBAL</string>
+    <string name="btn_movimientos">MOVIMIENTOS</string>
+    <string name="btn_transferencias">TRANSFERENCIAS</string>
+    <string name="btn_cambiar_pass">CAMBIAR CONTRASEÑA</string>
+    <string name="btn_promociones">PROMOCIONES</string>
+    <string name="btn_cajeros">CAJEROS</string>
+    <string name="btn_text_salir">SALIR</string>
+        <string name="text_welcome">Bienvenido/a a mi banco</string>
+    <string name="btn_entrar_mayus">ENTRAR</string>
+    <string name="tie_oldpass">Contraseña antigua</string>
+    <string name="tie_newpass">Nueva contraseña</string>
+    <string name="tie_repeatpass">Respite la contraseña</string>
+    <string name="btn_chng_passwd">Cambiar contraseña</string>
+    <string name="ti_user">DNI no válido</string>
+    <string name="dni_empty">Debe haber un DNI</string>
+    <string name="new_pass">La contraseña debe coincidir</string>
+
+
+</resources>
