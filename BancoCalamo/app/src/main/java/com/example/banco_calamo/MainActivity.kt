@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.tercerBoton.setOnClickListener {
+            intent = Intent(this, TransferActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }
