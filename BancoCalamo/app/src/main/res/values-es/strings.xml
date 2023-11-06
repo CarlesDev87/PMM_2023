@@ -33,6 +33,10 @@
     <string name="ti_user">DNI no válido</string>
     <string name="dni_empty">Debe haber un DNI</string>
     <string name="new_pass">La contraseña debe coincidir</string>
+    <string name="txt_transfer">Transferencias</string>
+    <string name="rButton_text1">Cuenta propia</string>
+    <string name="rButton_text2">Cuenta ajena</string>
+    <string name="chk_justificante">Enviar justificante</string>
 
 
 </resources>

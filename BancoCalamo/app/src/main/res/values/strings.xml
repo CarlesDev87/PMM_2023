@@ -33,4 +33,8 @@
     <string name="ti_user">DNI not valid</string>
     <string name="dni_empty">There must be a DNI</string>
     <string name="new_pass">The password must match </string>
+    <string name="txt_transfer">Transfers</string>
+    <string name="rButton_text1">My account</string>
+    <string name="rButton_text2">Other account</string>
+    <string name="chk_justificante">Send proof</string>
 </resources>
