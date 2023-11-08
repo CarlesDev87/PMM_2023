@@ -1,4 +1,4 @@
-package com.example.banco_calamo
+package com.example.banco_calamo.activities
 
 
 import android.os.Bundle

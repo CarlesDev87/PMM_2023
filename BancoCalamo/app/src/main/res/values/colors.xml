@@ -2,7 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_botones">#CE613F</color>
-    <color name="color_fondo">#351B1D</color>
+    <color name="color_botones">#FEDBD0</color>
+    <color name="color_fondo">#FFF3F0</color>
     <color name="color_app">#B5B4B4</color>
+    <color name="green">#1B5E20</color>
+    <color name="green_dark">#003300</color>
+    <color name="green_light">#A5D6A7</color>
+    <color name="blue">#0288D1</color>
+    <color name="blue_dark">#005B9F</color>
+    <color name="blue_light">#81D4FA</color>
+    <color name="boton_rojo">#FF0000</color>
+    <color name="color_texto_boton">#442C2E</color>
+
 </resources>

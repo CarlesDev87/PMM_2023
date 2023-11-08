@@ -19,7 +19,7 @@
     <string name="add_task">Inicio</string>
     <string name="btn_pos_global">GLOBAL</string>
     <string name="btn_movimientos">MOVEMENTS</string>
-    <string name="btn_transferencias">TRANSFERENCIES</string>
+    <string name="btn_transferencias">TRANSFERS</string>
     <string name="btn_cambiar_pass">CHANGE PASSWORD</string>
     <string name="btn_promociones">PROMOTIONS</string>
     <string name="btn_cajeros">CASHIERS</string>
@@ -37,4 +37,13 @@
     <string name="rButton_text1">My account</string>
     <string name="rButton_text2">Other account</string>
     <string name="chk_justificante">Send proof</string>
+    <string name="txt_btn_enviar_transf">Send</string>
+    <string name="txt_btn_cancelar_transf">Cancel</string>
+    <string name="txt_elige_cuenta">Choose your account:</string>
+    <string name="txt_cantidad">Ammount:</string>
+    <string name="tie_num_cuenta_ajena">Enter the bank account</string>
+    <string name="cuenta_origen">Origin account</string>
+    <string name="cuenta_destino">To own account</string>
+    <string name="cuenta_ajena">External account</string>
+
 </resources>

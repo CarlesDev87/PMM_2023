@@ -1,8 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.BancoCalamo" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Customize your light theme here. -->
+        <item name="android:background">@color/color_fondo</item>
+        <item name="colorPrimary">@color/color_texto_boton</item>
+        <item name="colorSecondary">@color/color_texto_boton</item>
+
     </style>
+
+
+    <style name="EstiloBotones">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:backgroundTint">@color/color_botones</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_texto_boton</item>
+
+    </style>
+
+
+    <style name="EstiloBotones_land">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="paddingStart">@dimen/padding_botones</item>
+        <item name="android:layout_marginStart">@dimen/common_padding_min</item>
+        <item name="paddingEnd">@dimen/padding_botones</item>
+    </style>
+
+    <style name="Theme.BancoCalamo" parent="Base.Theme.BancoCalamo" />
 
 </resources>

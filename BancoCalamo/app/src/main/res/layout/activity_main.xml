@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <include
         android:id="@+id/include"
@@ -185,7 +185,8 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/add_task"
         android:src="@drawable/ic_bank"
-        app:layout_anchor="@id/bottomAppBar" />
+        app:layout_anchor="@id/bottomAppBar"
+        style="@style/EstiloBotones"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

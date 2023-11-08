@@ -24,7 +24,7 @@
     <string name="btn_promociones">PROMOCIONES</string>
     <string name="btn_cajeros">CAJEROS</string>
     <string name="btn_text_salir">SALIR</string>
-        <string name="text_welcome">Bienvenido/a a mi banco</string>
+    <string name="text_welcome">Bienvenido/a a mi banco</string>
     <string name="btn_entrar_mayus">ENTRAR</string>
     <string name="tie_oldpass">Contraseña antigua</string>
     <string name="tie_newpass">Nueva contraseña</string>
@@ -37,6 +37,12 @@
     <string name="rButton_text1">Cuenta propia</string>
     <string name="rButton_text2">Cuenta ajena</string>
     <string name="chk_justificante">Enviar justificante</string>
-
-
+    <string name="txt_btn_enviar_transf">Enviar</string>
+    <string name="txt_btn_cancelar_transf">Cancelar</string>
+    <string name="txt_elige_cuenta">Elige tu cuenta:</string>
+    <string name="txt_cantidad">Cantidad:</string>
+    <string name="tie_num_cuenta_ajena">Introduce el número de cuenta</string>
+    <string name="cuenta_origen">Cuenta origen</string>
+    <string name="cuenta_destino">A cuenta propia</string>
+    <string name="cuenta_ajena">A cuenta ajena</string>
 </resources>

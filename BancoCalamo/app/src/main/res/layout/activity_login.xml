@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".LoginActivity">
+    tools:context=".activities.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,7 +61,6 @@
                     android:layout_marginTop="@dimen/commom_margin_default"
                     android:hint="@string/hint_user">
 
-
                 </com.google.android.material.textfield.TextInputEditText>
 
 
@@ -100,6 +99,7 @@
                 android:paddingStart="@dimen/common_padding_btn"
                 android:paddingEnd="@dimen/common_padding_btn"
                 android:text="@string/btn_text_enter"
+                style="@style/EstiloBotones"
                 app:layout_constraintStart_toStartOf="@+id/text_input_pass"
                 app:layout_constraintTop_toBottomOf="@id/text_input_pass" />
 
@@ -108,6 +108,7 @@
                 android:id="@+id/btn_exit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                style="@style/EstiloBotones"
                 android:layout_marginStart="@dimen/commom_margin_btn"
                 android:layout_marginTop="@dimen/commom_margin_default"
                 android:paddingStart="@dimen/common_padding_btn"

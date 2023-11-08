@@ -24,6 +24,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/btn_entrar_mayus"
+        style="@style/EstiloBotones"
         android:layout_marginTop="30dp"
 
         />

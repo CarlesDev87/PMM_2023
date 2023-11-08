@@ -1,9 +1,8 @@
-package com.example.banco_calamo
+package com.example.banco_calamo.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.airbnb.lottie.LottieAnimationView
 import com.example.banco_calamo.databinding.ActivityWelcomeBinding
 
 

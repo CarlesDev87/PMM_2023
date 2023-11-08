@@ -1,11 +1,11 @@
-package com.example.banco_calamo
+package com.example.banco_calamo.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.banco_calamo.R
 import com.example.banco_calamo.databinding.ActivityLoginBinding
-import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 

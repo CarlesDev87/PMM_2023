@@ -1,113 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/txt_transfer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_transfer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAlignment="center"
         android:layout_margin="@dimen/common_padding_min"
-        />
+        android:text="@string/txt_transfer"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding_min"
+        android:text="@string/txt_elige_cuenta"
+        app:layout_constraintBottom_toTopOf="@id/spinner_cuentas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_transfer" />
 
     <Spinner
         android:id="@+id/spinner_cuentas"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_transfer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
         android:layout_margin="@dimen/commom_margin_default"
-        />
-
-    <RadioButton
-        android:id="@+id/rButton1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cuentas"
-        app:layout_constraintEnd_toStartOf="@id/rButton2"
-        android:text="@string/rButton_text2"
-        android:layout_margin="@dimen/common_padding_min"
-        />
-
-    <RadioButton
-        android:id="@+id/rButton2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/rButton1"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cuentas"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/rButton_text1"
-        android:layout_margin="@dimen/common_padding_min"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_transfer" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/commom_margin_default"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/spinner_cuenta_selecc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_cuentas">
+
+        <RadioButton
+            android:id="@+id/rButton1"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rButton_text1"
+            />
+
+
+        <RadioButton
+            android:id="@+id/rButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rButton_text2" />
+
+
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner_cuenta_selecc"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rButton1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linear_cantidad"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/commom_margin_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup"
         />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etxt_cantidad"
-        android:layout_width="0dp"
+        android:id="@+id/text_input_other_account"
+        android:layout_width="350dp"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/spinner_cuenta_selecc"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_selecc"
-        app:layout_constraintEnd_toStartOf="@id/spinner_cantidad"
-        android:layout_margin="@dimen/common_padding_min"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/spinner_cuenta_selecc"
+        android:layout_marginBottom="@dimen/common_padding_min"
+        android:visibility="gone"
+        android:hint="@string/tie_num_cuenta_ajena"
+         />
 
-    <Spinner
-        android:id="@+id/spinner_cantidad"
+    <LinearLayout
+        android:id="@+id/linear_cantidad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/etxt_cantidad"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_selecc"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/common_padding_min"
-        />
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/chk_justificante"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_cantidad"
+            app:layout_constraintBottom_toTopOf="@id/chk_justificante"
+            app:layout_constraintEnd_toStartOf="@id/etxt_cantidad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_selecc" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etxt_cantidad"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_min"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toStartOf="@id/spinner_cantidad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_selecc" />
+
+        <Spinner
+            android:id="@+id/spinner_cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_padding_min"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/etxt_cantidad"
+            app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_selecc" />
+
+    </LinearLayout>
+
 
     <CheckBox
         android:id="@+id/chk_justificante"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/spinner_cantidad"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/common_padding_min"
         android:text="@string/chk_justificante"
-        android:layout_margin="@dimen/commom_margin_default"
-
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_cantidad" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_enviar_transferencia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        style="@style/EstiloBotones"
         android:layout_margin="@dimen/common_padding_min"
-        app:layout_constraintTop_toBottomOf="@id/chk_justificante"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/txt_btn_enviar_transf"
         app:layout_constraintEnd_toStartOf="@id/btn_cancelar_transferencia"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chk_justificante" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cancelar_transferencia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/btn_enviar_transferencia"
-        app:layout_constraintTop_toBottomOf="@id/chk_justificante"
+        style="@style/EstiloBotones"
         android:layout_margin="@dimen/common_padding_min"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:text="@string/txt_btn_cancelar_transf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_enviar_transferencia"
+        app:layout_constraintTop_toBottomOf="@id/chk_justificante" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
