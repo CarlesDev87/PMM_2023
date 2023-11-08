@@ -1,6 +1,7 @@
 package com.example.banco_calamo.activities
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
@@ -21,12 +22,15 @@ class SplashActivity : AppCompatActivity() {
 
         lottieAnimationView.playAnimation()
 
-     /*   binding.animationView.postDelayed({
+        val splashScreenDuration = 3000
+
+        binding.animationView.postDelayed({
+            val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
             finish()
-            splashscreenduration
 
-        }) */
+
+        }, splashScreenDuration.toLong())
     }
 
 }

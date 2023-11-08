@@ -1,5 +1,6 @@
-package com.example.bancoapiprofe.pojo
+package com.example.banco_calamo.pojo
 
+import com.example.banco_calamo.pojo.Movimiento
 import java.io.Serializable
 
 class Cuenta : Serializable {

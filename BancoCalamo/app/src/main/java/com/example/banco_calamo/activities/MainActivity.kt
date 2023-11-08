@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.banco_calamo.databinding.ActivityMainBinding
+import com.example.banco_calamo.bd.MiBancoOperacional
+import com.example.banco_calamo.pojo.Cliente
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,9 +17,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dni = intent.getStringExtra("dni")
+        val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
 
-        binding.dniUser.text =  dni
+        val clienteLogueado = intent.getSerializableExtra("Cliente")
+
+        binding.dniUser.text = clienteLogueado.toString()
+
+
+
+
 
         binding.septBoton.setOnClickListener {
             System.exit(0)
@@ -34,8 +42,5 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
-
-
 }

@@ -45,4 +45,6 @@
     <string name="cuenta_origen">Cuenta origen</string>
     <string name="cuenta_destino">A cuenta propia</string>
     <string name="cuenta_ajena">A cuenta ajena</string>
+    <string name="toast_cliente_noExiste">El cliente no existe en la BD</string>
+
 </resources>

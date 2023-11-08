@@ -1,4 +1,4 @@
-package com.example.bancoapiprofe.pojo
+package com.example.banco_calamo.pojo
 
 import java.io.Serializable
 import java.text.SimpleDateFormat
