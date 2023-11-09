@@ -39,6 +39,9 @@
         <activity android:name=".activities.TransferActivity">
 
         </activity>
+        <activity android:name=".activities.GlobalPositionActivity">
+
+        </activity>
     </application>
 
 </manifest>

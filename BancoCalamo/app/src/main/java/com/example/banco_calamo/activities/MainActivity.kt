@@ -10,22 +10,16 @@ import com.example.banco_calamo.pojo.Cliente
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
 
-        val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
-
-        val clienteLogueado = intent.getSerializableExtra("Cliente")
-
-        binding.dniUser.text = clienteLogueado.toString()
-
-
-
-
+        login(cliente)
 
         binding.septBoton.setOnClickListener {
             System.exit(0)
@@ -41,6 +35,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+    }
+
+    fun login (c:Cliente):Cliente? {
+
+        binding.dniUser.text = c.getNombre() + " "+ c.getApellidos()
+
+        return c
 
     }
 }

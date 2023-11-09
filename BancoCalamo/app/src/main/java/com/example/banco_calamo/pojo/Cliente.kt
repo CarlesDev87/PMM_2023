@@ -11,6 +11,7 @@ class Cliente : Serializable {
     private var email: String? = null
     private var listaCuentas: ArrayList<Cuenta>? = null
 
+
     constructor(
         id: Int,
         nif: String?,
@@ -86,4 +87,5 @@ class Cliente : Serializable {
     fun setEmail(email: String?) {
         this.email = email
     }
+
 }

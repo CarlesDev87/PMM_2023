@@ -21,7 +21,6 @@ class TransferActivity : AppCompatActivity() {
         binding = ActivityTransferBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         //SPINNER CUENTAS Y SU ADAPTER
 
         val cuentas = arrayOf(

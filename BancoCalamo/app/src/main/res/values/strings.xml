@@ -46,5 +46,7 @@
     <string name="cuenta_destino">To own account</string>
     <string name="cuenta_ajena">External account</string>
     <string name="toast_cliente_noExiste">Client does not exist on DB</string>
+    <string name="txt_posicion_global">Global position</string>
+    <string name="txt_cuentas">Accounts:</string>
 
 </resources>
