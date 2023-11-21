@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.banco_calamo.pojo.Cliente
 import com.example.banco_calamo.pojo.Cuenta
 import com.example.banco_calamo.pojo.Movimiento
+import java.io.Serializable
 
 class MiBancoOperacional protected constructor(context: Context?) {
     private val miBD: MiBD?

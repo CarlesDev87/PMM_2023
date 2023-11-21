@@ -156,7 +156,7 @@
                     app:icon="@drawable/ic_btn7"
                     app:layout_constraintEnd_toEndOf="@id/constraint_buttons"
                     app:layout_constraintStart_toStartOf="@id/constraint_buttons"
-                    app:layout_constraintTop_toBottomOf="@id/sexto_boton" />
+                    app:layout_constraintTop_toBottomOf="@id/sexto_boton"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

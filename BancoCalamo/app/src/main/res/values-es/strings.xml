@@ -48,4 +48,7 @@
     <string name="toast_cliente_noExiste">El cliente no existe en la BD</string>
     <string name="txt_posicion_global">Posición Global</string>
     <string name="txt_cuentas">Cuentas:</string>
+    <string name="txt_movimientos">Movimientos</string>
+    <string name="txt_titulo_movimientos">Selecciona la cuenta:</string>
+    <string name="txt_ultimos_movimientos">"Últimos movimientos:"</string>
 </resources>

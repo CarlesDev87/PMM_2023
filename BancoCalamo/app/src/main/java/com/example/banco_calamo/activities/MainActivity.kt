@@ -21,6 +21,18 @@ class MainActivity : AppCompatActivity() {
 
         login(cliente)
 
+        binding.primerBoton.setOnClickListener {
+            intent = Intent(this, GlobalPositionActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.segundoBoton.setOnClickListener {
+            intent = Intent(this, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
         binding.septBoton.setOnClickListener {
             System.exit(0)
         }

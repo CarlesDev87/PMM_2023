@@ -48,5 +48,8 @@
     <string name="toast_cliente_noExiste">Client does not exist on DB</string>
     <string name="txt_posicion_global">Global position</string>
     <string name="txt_cuentas">Accounts:</string>
+    <string name="txt_movimientos">Movements</string>
+    <string name="txt_titulo_movimientos">Select the account:</string>
+    <string name="txt_ultimos_movimientos">"Last movements: "</string>
 
 </resources>

@@ -11,5 +11,7 @@
     <dimen name="commom_margin_avatar">45dp</dimen>
     <dimen name="padding_botones">15dp</dimen>
     <dimen name="margin_buttons">15dp</dimen>
+    <dimen name="card_img_size">40dp</dimen>
+    <dimen name="padding_min">10dp</dimen>
 
 </resources>
