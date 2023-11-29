@@ -1,4 +1,4 @@
-package com.example.banco_calamo.activities
+package com.example.banco_calamo.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -27,14 +27,14 @@ class AdapterMovimientos(private val listaMovimientos: ArrayList<Movimiento>) :
 
     override fun getItemCount(): Int = listaMovimientos.size
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movimiento = listaMovimientos.get(position)
         with(holder.binding) {
 
+            imgCuentaMovimiento.setImageResource(R.drawable.dinero)
             txtNumMovimiento.text = "${movimiento.getDescripcion().toString()}"
-            txtConceptoMovimiento.text = "${
-                movimiento.getFechaOperacion().toString()
-            } " + "Importe: -" + "${movimiento.getImporte()}"
+            txtConceptoMovimiento.text = "${movimiento.getImporte()}"
 
 
             txtConceptoMovimiento.setTextColor(

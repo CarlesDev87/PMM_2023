@@ -1,10 +1,10 @@
 package com.example.banco_calamo.bd
 
 import android.content.Context
+import com.example.banco_calamo.fragments.AccountsFragment
 import com.example.banco_calamo.pojo.Cliente
 import com.example.banco_calamo.pojo.Cuenta
 import com.example.banco_calamo.pojo.Movimiento
-import java.io.Serializable
 
 class MiBancoOperacional protected constructor(context: Context?) {
     private val miBD: MiBD?
@@ -80,7 +80,7 @@ class MiBancoOperacional protected constructor(context: Context?) {
         // Interfaz publica de la API del banco
         //***************************************
         // Constructor del banco. Obtiene una instancia del mismo para operar
-        fun getInstance(context: Context?): MiBancoOperacional? {
+        fun getInstance(context: AccountsFragment): MiBancoOperacional? {
             if (instance == null) {
                 instance = MiBancoOperacional(context)
             }

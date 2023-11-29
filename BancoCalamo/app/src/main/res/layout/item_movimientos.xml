@@ -35,7 +35,7 @@
             tools:text="Numero de cuenta"
             android:layout_margin="@dimen/padding_botones"
             android:textStyle="bold"
-            android:textSize="@dimen/padding_min"
+            android:textSize="@dimen/padding_botones"
 
             />
 

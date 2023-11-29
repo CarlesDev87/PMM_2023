@@ -1,13 +1,11 @@
-package com.example.banco_calamo.activities
+package com.example.banco_calamo.adapters
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.banco_calamo.R
 import com.example.banco_calamo.databinding.ItemCuentaBinding
 import com.example.banco_calamo.pojo.Cuenta
