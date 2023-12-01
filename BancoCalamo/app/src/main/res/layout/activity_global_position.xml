@@ -8,11 +8,10 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_accounts"
-        class="com.example.banco_calamo.fragments.AccountsFragment"
+        android:id="@+id/frg_accounts_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_accounts"/>
+        />
 
 
 

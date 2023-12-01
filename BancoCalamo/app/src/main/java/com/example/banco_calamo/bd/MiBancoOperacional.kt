@@ -80,7 +80,7 @@ class MiBancoOperacional protected constructor(context: Context?) {
         // Interfaz publica de la API del banco
         //***************************************
         // Constructor del banco. Obtiene una instancia del mismo para operar
-        fun getInstance(context: AccountsFragment): MiBancoOperacional? {
+        fun getInstance(context: Context?): MiBancoOperacional? {
             if (instance == null) {
                 instance = MiBancoOperacional(context)
             }

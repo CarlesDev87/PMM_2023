@@ -25,20 +25,21 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener {
         binding = ActivityGlobalPositionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val clienteLogueado = intent.getSerializableExtra("Cliente")
 
-        val cliente = intent.getSerializableExtra("Cliente")
+        var frgAccounts: AccountsFragment = AccountsFragment.newInstance(clienteLogueado as Cliente)
 
-        var frgAccounts: AccountsFragment = AccountsFragment.newInstance(cliente as Cliente)
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frg_accounts_container,frgAccounts).commit()
 
         frgAccounts.setAccountsListener(this)
-
-
     }
 
     override fun onCuentaSeleccionada(cuenta: Cuenta) {
         if (cuenta != null) {
-            var hayDetalle=
-                binding.frgAccounts?.let { supportFragmentManager.findFragmentById(it.id) } != null
+            var hayDetalle =
+                binding.frgAccountsContainer?.let { supportFragmentManager.findFragmentById(it.id) } != null
         }
     }
 

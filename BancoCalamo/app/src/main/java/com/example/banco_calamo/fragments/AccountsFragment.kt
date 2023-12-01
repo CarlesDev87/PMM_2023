@@ -19,7 +19,7 @@ import com.example.banco_calamo.pojo.Cliente
 import com.example.banco_calamo.pojo.Cuenta
 
 
-private const val ARG_CLIENTE = "cliente"
+private const val ARG_CLIENTE = "Cliente"
 
 
 class AccountsFragment : Fragment(), OnClickListener {
@@ -36,7 +36,6 @@ class AccountsFragment : Fragment(), OnClickListener {
         super.onCreate(savedInstanceState)
         arguments?.let {
             cliente = it.getSerializable(ARG_CLIENTE) as Cliente
-
         }
     }
 
@@ -52,20 +51,15 @@ class AccountsFragment : Fragment(), OnClickListener {
         binding = FragmentAccountsBinding.inflate(inflater, container, false)
 
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
+        val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
 
-        val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente as Cliente) as ArrayList<Cuenta>
-
-
-        adapterCuentas = AdapterCuentas(listaCuentas, this)
+        adapterCuentas = AdapterCuentas(listaCuentas)
         linearLayoutManager = LinearLayoutManager(context)
         itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
 
         binding.recyclerViewCuentas.apply {
             layoutManager = linearLayoutManager
-            adapter = adapterCuentas
-            addItemDecoration(itemDecoration)
         }
-
         return binding.root
     }
 
@@ -79,13 +73,7 @@ class AccountsFragment : Fragment(), OnClickListener {
             }
     }
 
-    fun onClick(cuenta: Cuenta) {
-        if (listener != null) {
-            listener.onCuentaSeleccionada(cuenta)
-        }
-    }
-
     override fun onClick(dialog: DialogInterface?, which: Int) {
-        TODO("Not yet implemented")
+
     }
 }

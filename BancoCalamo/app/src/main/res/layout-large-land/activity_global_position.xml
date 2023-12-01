@@ -6,22 +6,18 @@
     android:orientation="horizontal">
 
     <androidx.fragment.app.FragmentContainerView
-        class="com.example.banco_calamo.fragments.AccountsFragment"
+        android:id="@+id/frg_accounts_large_land"
         android:layout_weight="50"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_accounts"
         />
 
     <androidx.fragment.app.FragmentContainerView
-        class="com.example.banco_calamo.fragments.AccountsMovementsFragment"
+        android:id="@+id/frg_movements_large_land"
         android:layout_weight="50"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_accounts_movements"
         android:layout_marginTop="10dp"
         />
-
-
 
 </LinearLayout>
