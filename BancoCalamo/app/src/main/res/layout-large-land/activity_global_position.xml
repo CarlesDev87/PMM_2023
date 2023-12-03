@@ -6,14 +6,14 @@
     android:orientation="horizontal">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_accounts_large_land"
+        android:id="@+id/frg_accounts"
         android:layout_weight="50"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_movements_large_land"
+        android:id="@+id/frg_movements"
         android:layout_weight="50"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

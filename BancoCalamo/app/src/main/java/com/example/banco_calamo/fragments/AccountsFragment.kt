@@ -3,6 +3,7 @@ package com.example.banco_calamo.fragments
 import android.content.DialogInterface
 import android.content.DialogInterface.OnClickListener
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,7 @@ import com.example.banco_calamo.bd.MiBancoOperacional
 import com.example.banco_calamo.databinding.FragmentAccountsBinding
 import com.example.banco_calamo.pojo.Cliente
 import com.example.banco_calamo.pojo.Cuenta
+import kotlin.math.log
 
 
 private const val ARG_CLIENTE = "Cliente"
@@ -28,7 +30,6 @@ class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickLi
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var binding: FragmentAccountsBinding
     private lateinit var listener: AccountsListener
-
     private lateinit var cliente: Cliente
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +51,7 @@ class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickLi
 
         val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
 
-        adapterCuentas = AdapterCuentas(listaCuentas)
+        adapterCuentas = AdapterCuentas(listaCuentas, this)
         linearLayoutManager = LinearLayoutManager(context)
 
 
@@ -77,8 +78,10 @@ class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickLi
     }
 
     override fun onclick(c: Cuenta) {
+        Log.i("accountsFragment", "infoFragment cuentas")
         if (listener != null) {
             listener.onCuentaSeleccionada(c)
+
         }
     }
 

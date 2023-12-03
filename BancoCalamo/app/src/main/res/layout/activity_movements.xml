@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AccountsMovementsFragment">
+    tools:context=".activities.MovementsActivity">
 
     <TextView
         android:id="@+id/txt_movimientos"
@@ -18,14 +18,34 @@
         android:layout_margin="@dimen/common_padding_min"
         android:textSize="@dimen/textview"/>
 
+    <TextView
+        android:id="@+id/txt_titulo_movimientos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_titulo_movimientos"
+        app:layout_constraintTop_toBottomOf="@id/txt_movimientos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/txt_movimientos"
+        android:layout_margin="@dimen/padding_botones"
+        android:textSize="@dimen/text_login"
+        />
 
+    <Spinner
+        android:id="@+id/spinner_cuenta_movimientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_titulo_movimientos"
+        android:layout_margin="@dimen/padding_botones"
+        />
 
     <TextView
         android:id="@+id/txt_ultimos_movimientos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/txt_ultimos_movimientos"
-        app:layout_constraintTop_toBottomOf="@id/txt_movimientos"
+        app:layout_constraintTop_toBottomOf="@id/spinner_cuenta_movimientos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/padding_botones"

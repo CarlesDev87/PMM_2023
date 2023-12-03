@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banco_calamo.adapters.AdapterMovimientos
 import com.example.banco_calamo.bd.MiBancoOperacional
+import com.example.banco_calamo.databinding.ActivityMovementsBinding
 
 import com.example.banco_calamo.databinding.FragmentAccountsMovementsBinding
 import com.example.banco_calamo.pojo.Cliente
@@ -21,12 +22,12 @@ class MovementsActivity: AppCompatActivity() {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var itemDecoration: DividerItemDecoration
 
-    private lateinit var binding: FragmentAccountsMovementsBinding
+    private lateinit var binding: ActivityMovementsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = FragmentAccountsMovementsBinding.inflate(layoutInflater)
+        binding = ActivityMovementsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -56,7 +57,6 @@ class MovementsActivity: AppCompatActivity() {
                 binding.recyclerViewMovimientos.apply {
                     adapter = adapterMovimientos
                     layoutManager = linearLayoutManager
-
 
                 }
             }

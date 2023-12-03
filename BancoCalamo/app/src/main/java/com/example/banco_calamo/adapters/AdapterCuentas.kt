@@ -10,13 +10,20 @@ import com.example.banco_calamo.R
 import com.example.banco_calamo.databinding.ItemCuentaBinding
 import com.example.banco_calamo.pojo.Cuenta
 
-class AdapterCuentas(private val accountList: ArrayList<Cuenta>) :
+class AdapterCuentas(private val accountList: ArrayList<Cuenta>, private val listener:OnClickListener) :
     RecyclerView.Adapter<AdapterCuentas.ViewHolder>() {
 
     private lateinit var context: Context
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
         val binding = ItemCuentaBinding.bind(view)
+        fun setListener(cuenta: Cuenta) {
+            binding.root.setOnClickListener {
+                listener.onclick(cuenta)
+            }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +40,7 @@ class AdapterCuentas(private val accountList: ArrayList<Cuenta>) :
             binding.txtNumCuenta.text = "${cuenta.getBanco().toString()} - ${cuenta.getSucursal().toString()} - ${cuenta.getDc().toString()} - ${cuenta.getNumeroCuenta().toString()}"
 
             binding.txtImporteCuenta.text = cuenta.getSaldoActual().toString()
+            setListener(cuenta)
 
             val saldo: Float? = cuenta.getSaldoActual()
 

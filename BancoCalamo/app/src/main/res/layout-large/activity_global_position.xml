@@ -5,14 +5,14 @@
     android:orientation="vertical">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_accounts_large"
+        android:id="@+id/frg_accounts"
         android:layout_weight="40"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_movements_large"
+        android:id="@+id/frg_movements"
         android:layout_weight="60"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

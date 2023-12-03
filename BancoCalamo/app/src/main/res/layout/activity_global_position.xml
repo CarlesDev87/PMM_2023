@@ -8,7 +8,7 @@
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/frg_accounts_container"
+        android:id="@+id/frg_accounts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
