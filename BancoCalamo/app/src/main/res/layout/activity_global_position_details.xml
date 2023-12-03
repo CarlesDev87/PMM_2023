@@ -9,7 +9,6 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frg_movements"
-        class="com.example.banco_calamo.fragments.AccountsMovementsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/fragment_accounts_movements"/>

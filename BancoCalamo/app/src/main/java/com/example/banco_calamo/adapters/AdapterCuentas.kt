@@ -32,7 +32,6 @@ class AdapterCuentas(private val accountList: ArrayList<Cuenta>) :
         with(holder) {
             binding.txtNumCuenta.text = "${cuenta.getBanco().toString()} - ${cuenta.getSucursal().toString()} - ${cuenta.getDc().toString()} - ${cuenta.getNumeroCuenta().toString()}"
 
-
             binding.txtImporteCuenta.text = cuenta.getSaldoActual().toString()
 
             val saldo: Float? = cuenta.getSaldoActual()

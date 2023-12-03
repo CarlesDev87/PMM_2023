@@ -57,6 +57,7 @@ class MovementsActivity: AppCompatActivity() {
                     adapter = adapterMovimientos
                     layoutManager = linearLayoutManager
 
+
                 }
             }
 

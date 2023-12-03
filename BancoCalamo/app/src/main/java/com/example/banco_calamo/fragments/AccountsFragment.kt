@@ -22,12 +22,11 @@ import com.example.banco_calamo.pojo.Cuenta
 private const val ARG_CLIENTE = "Cliente"
 
 
-class AccountsFragment : Fragment(), OnClickListener {
+class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickListener {
 
     private lateinit var adapterCuentas: AdapterCuentas
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var binding: FragmentAccountsBinding
-    private lateinit var itemDecoration: DividerItemDecoration
     private lateinit var listener: AccountsListener
 
     private lateinit var cliente: Cliente
@@ -39,9 +38,6 @@ class AccountsFragment : Fragment(), OnClickListener {
         }
     }
 
-    fun setAccountsListener(listener: AccountsListener) {
-        this.listener = listener
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,14 +47,17 @@ class AccountsFragment : Fragment(), OnClickListener {
         binding = FragmentAccountsBinding.inflate(inflater, container, false)
 
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
+
         val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
 
         adapterCuentas = AdapterCuentas(listaCuentas)
         linearLayoutManager = LinearLayoutManager(context)
-        itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+
 
         binding.recyclerViewCuentas.apply {
             layoutManager = linearLayoutManager
+            adapter = adapterCuentas
+
         }
         return binding.root
     }
@@ -73,7 +72,15 @@ class AccountsFragment : Fragment(), OnClickListener {
             }
     }
 
-    override fun onClick(dialog: DialogInterface?, which: Int) {
-
+    fun setAccountsListener(listener: AccountsListener) {
+        this.listener = listener
     }
+
+    override fun onclick(c: Cuenta) {
+        if (listener != null) {
+            listener.onCuentaSeleccionada(c)
+        }
+    }
+
+
 }

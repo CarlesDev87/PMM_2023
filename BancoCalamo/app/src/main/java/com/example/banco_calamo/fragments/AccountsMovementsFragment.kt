@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.banco_calamo.R
+import com.example.banco_calamo.pojo.Cuenta
 
-
-
-
-class AccountsMovementsFragment : Fragment() {
+private const val ARG_CUENTA = "Cuenta"
+class AccountsMovementsFragment : Fragment()  {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,10 +30,10 @@ class AccountsMovementsFragment : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(c: Cuenta) =
             AccountsMovementsFragment().apply {
                 arguments = Bundle().apply {
-
+                    putSerializable(ARG_CUENTA, c)
                 }
             }
     }

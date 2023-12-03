@@ -36,10 +36,10 @@ class Cuenta : Serializable {
 
     override fun toString(): String {  // QUITAR LOS VALORES DE ID, BANCO, SUCURSAL, PARA QUE SALGAN BIEN EN EL SPINNER DE MOVIMIENTOS
         return """
-               "-"${banco}
-               "-"${sucursal}
-               "-"${dc}
-               "-"${numeroCuenta}
+               ${banco}
+               - ${sucursal}
+               - ${dc}
+               - ${numeroCuenta}
                """.trimIndent()
     }
 
