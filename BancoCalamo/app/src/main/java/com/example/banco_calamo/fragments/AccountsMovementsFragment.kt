@@ -1,6 +1,8 @@
 package com.example.banco_calamo.fragments
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +17,10 @@ import com.example.banco_calamo.databinding.FragmentAccountsBinding
 import com.example.banco_calamo.databinding.FragmentAccountsMovementsBinding
 import com.example.banco_calamo.pojo.Cuenta
 import com.example.banco_calamo.pojo.Movimiento
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 private const val ARG_CUENTA = "Cuenta"
+private const val ARG_TIPO = "Tipo"
 class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickListenerMovements  {
 
     private lateinit var adapterMovimientos: AdapterMovimientos
@@ -30,6 +34,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
         super.onCreate(savedInstanceState)
         arguments?.let {
         cuenta = it.getSerializable(ARG_CUENTA) as Cuenta
+
         }
     }
 
@@ -37,6 +42,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         binding = FragmentAccountsMovementsBinding.inflate(inflater, container, false)
 
@@ -55,6 +61,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
 
         }
 
+
         return binding.root
     }
 
@@ -66,6 +73,15 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
                 arguments = Bundle().apply {
                     putSerializable(ARG_CUENTA, c)
                 }
+            }
+
+        fun newInstance(c: Cuenta, tipo: Int) =
+            AccountsMovementsFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(ARG_TIPO, c)
+                    putSerializable(ARG_TIPO, tipo)
+                }
+
             }
     }
 

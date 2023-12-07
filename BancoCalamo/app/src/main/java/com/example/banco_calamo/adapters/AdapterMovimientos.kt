@@ -45,7 +45,6 @@ class AdapterMovimientos(private val listaMovimientos: ArrayList<Movimiento>, pr
             binding.txtConceptoMovimiento.text = "${movimiento.getImporte()}"
             setListener(movimiento)
 
-
             binding.txtConceptoMovimiento.setTextColor(
                 ContextCompat.getColor(
                     context,
@@ -53,11 +52,7 @@ class AdapterMovimientos(private val listaMovimientos: ArrayList<Movimiento>, pr
                 )
             )
 
-
         }
     }
-
-
-
 
 }

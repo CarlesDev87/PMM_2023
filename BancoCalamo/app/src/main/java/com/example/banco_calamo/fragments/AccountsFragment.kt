@@ -49,7 +49,7 @@ class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickLi
 
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
 
-        val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente) as ArrayList<Cuenta>
+        val listaCuentas: ArrayList<Cuenta> = mbo?.getCuentas(cliente as Cliente?) as ArrayList<Cuenta>
 
         adapterCuentas = AdapterCuentas(listaCuentas, this)
         linearLayoutManager = LinearLayoutManager(context)
