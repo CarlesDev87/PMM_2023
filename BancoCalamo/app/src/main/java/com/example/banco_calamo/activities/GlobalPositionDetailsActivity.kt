@@ -43,13 +43,14 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
 
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.frg_movements, frgMovements).commit()
+            .add(R.id.frg_movements, frgMovements)
+
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
                 it.isChecked = true
                 when (it.itemId) {
                     R.id.navigation_home -> {
-                        replaceFragment(frgMovementsTipo)
+                        replaceFragment(frgMovements)
                     }
 
                     R.id.navigation_tipo_0 -> {

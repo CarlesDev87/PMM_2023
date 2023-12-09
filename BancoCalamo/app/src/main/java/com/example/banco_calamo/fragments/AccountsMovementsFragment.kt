@@ -27,6 +27,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var binding: FragmentAccountsMovementsBinding
     private lateinit var cuenta : Cuenta
+    private var tipo : Int? = null
     private lateinit var itemDecoration: DividerItemDecoration
     private lateinit var listener: MovementsListener
 
@@ -34,7 +35,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
         super.onCreate(savedInstanceState)
         arguments?.let {
         cuenta = it.getSerializable(ARG_CUENTA) as Cuenta
-
+        tipo = it.getSerializable(ARG_TIPO) as? Int
         }
     }
 
@@ -78,7 +79,7 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
         fun newInstance(c: Cuenta, tipo: Int) =
             AccountsMovementsFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(ARG_TIPO, c)
+                    putSerializable(ARG_CUENTA, c)
                     putSerializable(ARG_TIPO, tipo)
                 }
 

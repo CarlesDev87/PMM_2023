@@ -58,12 +58,11 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener, MovementsL
         } else {
             val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
             intent.putExtra("Cuenta", cuenta)
-            if (cuenta != null) {
                 startActivity(intent)
 
             }
         }
-    }
+
 
     override fun onMovimientoSeleccionado(mov: Movimiento) {
 
