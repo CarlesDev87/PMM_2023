@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="176dp"
     android:gravity="bottom"
     android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:background="@color/color_texto_boton">
 
-
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/casa"
+        android:layout_margin="@dimen/margin_buttons"
+        android:background="@color/color_texto_boton"
+        app:tint="@color/white"
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android Knowledge"
+        android:text="@string/txt_nav_header"
         android:textColor="@color/white"
-        android:textStyle="bold"/>
+        android:background="@color/color_texto_boton"
+        android:textStyle="bold" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="contact@androidknowledge.com"
+        android:text="@string/email_nav_header"
         android:textColor="@color/white"
+        android:background="@color/color_texto_boton"
         android:textSize="14sp"
         android:layout_marginBottom="16dp"/>
 </LinearLayout>

@@ -53,4 +53,15 @@
     <string name="txt_ultimos_movimientos">Últimos movimientos: </string>
     <string name="txt_dialogo">Detalle del movimiento </string>
     <string name="txt_btn_dialogo">Aceptar</string>
+    <string name="dialogo_linea_1">Dialogo 1</string>
+    <string name="dialogo_linea_2">Dialogo 2</string>
+    <string name="dialogo_linea_3">Dialogo 3\n</string>
+    <string name="dialogo_linea_4">Dialogo 4</string>
+    <string name="email_nav_header">contact@mibanco.com</string>
+    <string name="txt_nav_header">Mi Banco</string>
+    <string name="btn_home">PRINCIPAL</string>
+    <string name="btn_config">CONFIGURACION</string>
+    <string name="btn_logout">Salir</string>
+    <string name="open_nav">Abrir Navigation Drawer</string>
+    <string name="close_nav">Cerrar Navigation Drawer</string>
 </resources>

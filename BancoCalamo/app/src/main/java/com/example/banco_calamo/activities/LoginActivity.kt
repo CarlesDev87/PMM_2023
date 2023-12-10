@@ -8,6 +8,7 @@ import com.example.banco_calamo.R
 import com.example.banco_calamo.bd.MiBancoOperacional
 import com.example.banco_calamo.databinding.ActivityLoginBinding
 import com.example.banco_calamo.pojo.Cliente
+import java.io.Serializable
 
 class LoginActivity : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.toast_cliente_noExiste), Toast.LENGTH_LONG).show()
                 } else {
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("Cliente", clienteLogueado)
+                    intent.putExtra("ARG_CLIENTE", clienteLogueado as Serializable)
                     startActivity(intent)
                 }
 
