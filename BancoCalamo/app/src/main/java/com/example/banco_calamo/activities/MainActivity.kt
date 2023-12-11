@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente?
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -38,20 +39,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView?.setNavigationItemSelectedListener(this)
 
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.btn_home, R.string.btn_salir)
+
         drawerLayout.addDrawerListener(toggle)
-
-        val cliente = intent.getSerializableExtra("Cliente") as Cliente?
-
+        toggle.syncState()
 
 
         if (cliente != null) {
             val frgMain: MainFragment = MainFragment.newInstance(cliente)
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, frgMain).commit()
-            navigationView?.setCheckedItem(R.id.nav_home)
+            if (savedInstanceState == null) {
+                supportFragmentManager.beginTransaction()
+                    .add(R.id.fragment_container, frgMain).commit()
+                navigationView?.setCheckedItem(R.id.nav_home)
 
+            }
         }
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
