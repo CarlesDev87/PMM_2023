@@ -21,7 +21,7 @@ import com.example.banco_calamo.pojo.Cuenta
 import kotlin.math.log
 
 
-private const val ARG_CLIENTE = "Cliente"
+private const val ARG_CLIENTE = "cliente"
 
 
 class AccountsFragment : Fragment(), com.example.banco_calamo.adapters.OnClickListener {

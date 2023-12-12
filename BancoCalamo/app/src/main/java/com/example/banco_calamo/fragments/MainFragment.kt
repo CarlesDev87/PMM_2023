@@ -11,20 +11,20 @@ import com.example.banco_calamo.activities.GlobalPositionActivity
 import com.example.banco_calamo.activities.MovementsActivity
 import com.example.banco_calamo.activities.PasswordActivity
 import com.example.banco_calamo.activities.TransferActivity
+import com.example.banco_calamo.bd.MiBD
 import com.example.banco_calamo.bd.MiBancoOperacional
 import com.example.banco_calamo.databinding.FragmentMainBinding
 import com.example.banco_calamo.pojo.Cliente
+import java.io.Serializable
 
 // TODO: Rename parameter arguments, choose names that match
-
-
 
 /**
  * A simple [Fragment] subclass.
  * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-private const val ARG_CLIENTE = "CLiente"
+private const val ARG_CLIENTE = "cliente"
 
 class MainFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -41,7 +41,6 @@ class MainFragment : Fragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,13 +49,44 @@ class MainFragment : Fragment() {
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        val nombreCliente = cliente.getNombre()
-        binding.dniUser.text = nombreCliente
+        if (::cliente.isInitialized) {
+            val clienteLogueado: Cliente = cliente
+            binding.dniUser.text = clienteLogueado.getNombre().toString()
+        }
+
+
+        /*val clienteLogueado = cliente.getNombre()
+
+        binding.dniUser.text = clienteLogueado.toString() */
+
+        binding.primerBoton.setOnClickListener {
+            val intent = Intent(this.context, GlobalPositionActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.segundoBoton.setOnClickListener {
+            val intent = Intent(this.context, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.tercerBoton.setOnClickListener {
+            val intent = Intent(this.context, TransferActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cuartoBoton.setOnClickListener {
+            val intent = Intent(this.context, PasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.septBoton.setOnClickListener {
+            System.exit(0)
+        }
 
         return binding.root
     }
-
-
 
     companion object {
         /**

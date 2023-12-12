@@ -21,8 +21,7 @@
             android:id="@+id/toolbar"
             android:elevation="4dp"
             android:background="@color/color_texto_boton"
-            android:theme="@style/ThemeOverlay.AppCompat.DayNight.ActionBar"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"/>
+            />
 
         <FrameLayout
             android:layout_width="match_parent"

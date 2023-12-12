@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val cliente = intent.getSerializableExtra("Cliente") as Cliente?
+
+        val cliente = intent.getSerializableExtra("cliente") as Cliente?
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
