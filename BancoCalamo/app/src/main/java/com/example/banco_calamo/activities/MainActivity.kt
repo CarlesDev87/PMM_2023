@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val cliente = intent.getSerializableExtra("cliente") as Cliente?
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -39,20 +38,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navigationView = binding.navView
         navigationView?.setNavigationItemSelectedListener(this)
 
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.btn_home, R.string.btn_salir)
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.btn_home,
+            R.string.btn_salir
+        )
 
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
+        val cliente = intent.getSerializableExtra("cliente")
 
-        if (cliente != null) {
-            val frgMain: MainFragment = MainFragment.newInstance(cliente)
-            if (savedInstanceState == null) {
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.fragment_container, frgMain).commit()
-                navigationView?.setCheckedItem(R.id.nav_home)
+        val frgMain: MainFragment = MainFragment.newInstance(cliente as Cliente)
 
-            }
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, frgMain).commit()
+            navigationView?.setCheckedItem(R.id.nav_home)
         }
     }
 
@@ -60,13 +64,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, MainFragment()).commit()
+
             R.id.nav_config -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AccountsFragment()).commit()
+
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

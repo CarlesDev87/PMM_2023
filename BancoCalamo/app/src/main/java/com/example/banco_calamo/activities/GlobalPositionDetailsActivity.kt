@@ -32,49 +32,45 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
             AccountsMovementsFragment.newInstance(cuentaCliente as Cuenta)
         frgMovements.setMovementsListener(this)
 
-        var frgMovementsTipo: AccountsMovementsFragment =
-            AccountsMovementsFragment.newInstance(cuentaCliente, 0)
-        var frgMovementsTipo1: AccountsMovementsFragment =
-            AccountsMovementsFragment.newInstance(cuentaCliente, 1)
-        var frgMovementsTipo2: AccountsMovementsFragment =
-            AccountsMovementsFragment.newInstance(cuentaCliente, 2)
-
-
-
-
         supportFragmentManager.beginTransaction()
-            .add(R.id.frg_movements, frgMovements)
-
+            .add(R.id.frg_movements, frgMovements).commit()
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
-                it.isChecked = true
-                when (it.itemId) {
-                    R.id.navigation_home -> {
-                        replaceFragment(frgMovements)
-                    }
-
-                    R.id.navigation_tipo_0 -> {
-                        replaceFragment(frgMovementsTipo)
-                    }
-
-                    R.id.navigation_tipo_1 -> {
-                        replaceFragment(frgMovementsTipo1)
-                    }
-
-                    R.id.navigation_tipo_2 -> {
-                        replaceFragment(frgMovementsTipo2)
-                    }
+            it.isChecked = true
+            when (it.itemId) {
+                R.id.navigation_home -> {
+                    replaceFragment(frgMovements)
                 }
-            false
+
+                R.id.navigation_tipo_0 -> {
+                    var frgMovementsTipo: AccountsMovementsFragment =
+                        AccountsMovementsFragment.newInstance(cuentaCliente, 0)
+                    frgMovementsTipo.setMovementsListener(this)
+                    replaceFragment(frgMovementsTipo)
+                }
+
+                R.id.navigation_tipo_1 -> {
+                    var frgMovementsTipo1: AccountsMovementsFragment =
+                        AccountsMovementsFragment.newInstance(cuentaCliente, 1)
+                    frgMovementsTipo1.setMovementsListener(this)
+
+                    replaceFragment(frgMovementsTipo1)
+                }
+
+                R.id.navigation_tipo_2 -> {
+                    var frgMovementsTipo2: AccountsMovementsFragment =
+                        AccountsMovementsFragment.newInstance(cuentaCliente, 2)
+                    frgMovementsTipo2.setMovementsListener(this)
+                    replaceFragment(frgMovementsTipo2)
+                }
             }
-
-
+            false
+        }
     }
-
 
     override fun onMovimientoSeleccionado(mov: Movimiento) {
 
-        val dialogView = layoutInflater.inflate(R.layout.dialog_movement, null)
+        val dialogView = layoutInflater.inflate(R.layout.dialog_movement,null)
         val idMovimiento = dialogView.findViewById<TextView>(R.id.textView1)
 
         idMovimiento.text = mov.toString()

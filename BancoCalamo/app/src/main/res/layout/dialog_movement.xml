@@ -24,6 +24,5 @@
             android:text="@string/dialogo_linea_1" />
 
 
-
     </LinearLayout>
 </LinearLayout>

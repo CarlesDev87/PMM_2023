@@ -54,12 +54,10 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener, MovementsL
                 .replace(R.id.frg_movements, frgMovements).commit()
             frgMovements.setMovementsListener(this)
 
-
         } else {
             val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
             intent.putExtra("Cuenta", cuenta)
                 startActivity(intent)
-
             }
         }
 

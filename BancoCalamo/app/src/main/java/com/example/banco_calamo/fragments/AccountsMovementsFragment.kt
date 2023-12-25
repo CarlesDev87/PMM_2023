@@ -91,9 +91,8 @@ class AccountsMovementsFragment : Fragment(), com.example.banco_calamo.adapters.
     }
 
     override fun onClick(mov: Movimiento) {
-        if (listener != null) {
             listener.onMovimientoSeleccionado(mov)
-        }
+
     }
 
 

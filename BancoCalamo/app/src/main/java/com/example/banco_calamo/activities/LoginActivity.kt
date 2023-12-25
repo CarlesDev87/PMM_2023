@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, getString(R.string.toast_cliente_noExiste), Toast.LENGTH_LONG).show()
                 } else {
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("ARG_CLIENTE", clienteLogueado as Serializable)
+                    intent.putExtra("cliente", clienteLogueado)
                     startActivity(intent)
                 }
 

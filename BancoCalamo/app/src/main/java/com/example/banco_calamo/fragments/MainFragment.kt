@@ -49,15 +49,15 @@ class MainFragment : Fragment() {
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        if (::cliente.isInitialized) {
+        /*if (::cliente.isInitialized) {
             val clienteLogueado: Cliente = cliente
             binding.dniUser.text = clienteLogueado.getNombre().toString()
         }
+        */
 
+        val clienteLogueado = cliente.getNombre() + " " + cliente.getApellidos()
 
-        /*val clienteLogueado = cliente.getNombre()
-
-        binding.dniUser.text = clienteLogueado.toString() */
+        binding.dniUser.text = clienteLogueado
 
         binding.primerBoton.setOnClickListener {
             val intent = Intent(this.context, GlobalPositionActivity::class.java)
