@@ -64,4 +64,5 @@
     <string name="btn_logout">Salir</string>
     <string name="open_nav">Abrir Navigation Drawer</string>
     <string name="close_nav">Cerrar Navigation Drawer</string>
+    <string name="titulo_toolbar">App Banco</string>
 </resources>

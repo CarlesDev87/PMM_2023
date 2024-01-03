@@ -1,6 +1,5 @@
 package com.example.banco_calamo.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
@@ -23,6 +22,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -61,12 +61,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val cliente = intent.getSerializableExtra("cliente") as Cliente
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MainFragment()).commit()
+                .replace(R.id.fragment_container, MainFragment.newInstance(cliente)).commit()
 
-            R.id.nav_config -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AccountsFragment()).commit()
+            R.id.nav_global -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AccountsFragment.newInstance(cliente)).commit()
 
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
         }

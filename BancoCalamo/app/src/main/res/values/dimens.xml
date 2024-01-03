@@ -13,5 +13,6 @@
     <dimen name="margin_buttons">15dp</dimen>
     <dimen name="card_img_size">40dp</dimen>
     <dimen name="padding_min">10dp</dimen>
+    <dimen name="recycler">5dp</dimen>
 
 </resources>

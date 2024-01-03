@@ -20,7 +20,7 @@
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/toolbar"
             android:elevation="4dp"
-            android:background="@color/color_texto_boton"
+            app:title="@string/titulo_toolbar"
             />
 
         <FrameLayout

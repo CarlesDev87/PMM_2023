@@ -11,7 +11,7 @@
 
     <style name="EstiloBotones">
         <item name="android:layout_width">0dp</item>
-        <item name="android:backgroundTint">@color/color_botones</item>
+        <item name="android:backgroundTint">@color/color_texto_boton</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_texto_boton</item>
 
