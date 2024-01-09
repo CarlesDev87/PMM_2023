@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:icon="@drawable/nota"
+        app:title="@string/language">
+        <ListPreference
+            app:dialogTitle="@string/indicaridioma"
+            app:entries="@array/idioma"
+            app:entryValues="@array/codigoidioma"
+            app:key="idioma"
+            app:title="@string/idiomaapp"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_language"
+        app:title="@string/multimedia">
+
+        <SwitchPreferenceCompat
+            app:key="reproducirMusica"
+            app:summaryOff="@string/texto_musica"
+            app:summaryOn="@string/texto_musicaOn"
+            app:title="@string/titulo_media" />
+        <SwitchPreferenceCompat
+            app:key="reproducirVideo"
+            app:summaryOff="@string/textovideo"
+            app:summaryOn="@string/textovideoOn"
+            app:title="@string/titulo_video" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:icon="@drawable/ic_data_origin">
+
+        <ListPreference
+            app:dialogTitle="@string/txt_titulo_datos"
+            app:entries="@array/datos"
+            app:key="idioma"
+            app:title="@string/idiomaapp"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+
+
+
+
+
+
+</PreferenceScreen>

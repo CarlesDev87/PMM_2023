@@ -65,4 +65,17 @@
     <string name="open_nav">Abrir Navigation Drawer</string>
     <string name="close_nav">Cerrar Navigation Drawer</string>
     <string name="titulo_toolbar">App Banco</string>
+    <string name="language">Idioma</string>
+    <string name="idiomaapp">Idioma de la aplicación</string>
+    <string name="indicaridioma">Selecciona el idioma</string>
+    <string name="multimedia">Multimedia</string>
+    <string name="titulo_media">Música</string>
+    <string name="titulo_video">Vídeo de bienvenida</string>
+    <string name="texto_musica">No escuchar la música mientras se ejecuta la aplicación</string>
+    <string name="texto_musicaOn">Escuchar la música mientras se ejecuta la aplicación</string>
+    <string name="textovideo">No reproducir el vídeo al iniciar la aplicación</string>
+    <string name="textovideoOn">Reproducir el vídeo al iniciar la aplicación</string>
+    <string name="txt_titulo_datos">Origen de los datos</string>
+    <string name="servicio_web">Servicios web</string>
+    <string name="datos_local">Datos locales</string>
 </resources>

@@ -65,5 +65,18 @@
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
     <string name="titulo_toolbar">Bank App</string>
+    <string name="language">Language</string>
+    <string name="idiomaapp">App language</string>
+    <string name="indicaridioma">Select language</string>
+    <string name="multimedia">Media</string>
+    <string name="titulo_media">Music</string>
+    <string name="titulo_video">Welcome video</string>
+    <string name="texto_musica">Don\'t listen to music while the application is running</string>
+    <string name="texto_musicaOn">Listen the musica while the application is running</string>
+    <string name="textovideo">Don\'t play the video when starting the app</string>
+    <string name="textovideoOn">Play a video when the app is starting</string>
+    <string name="txt_titulo_datos">Data origin</string>
+    <string name="servicio_web">Web Services</string>
+    <string name="datos_local">Local Data</string>
 
 </resources>

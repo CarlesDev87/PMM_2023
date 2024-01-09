@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BancoCalamo"
         tools:targetApi="31">
-        <activity android:name=".activities.SplashActivity"
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false"
+             />
+        <activity
+            android:name=".activities.SplashActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -20,7 +25,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activities.WelcomeActivity"
@@ -31,35 +35,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.LoginActivity"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true" />
         <activity android:name=".activities.MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
-                android:value=""/>
+                android:value="" />
         </activity>
-
-        <activity android:name=".activities.PasswordActivity">
-
-        </activity>
-
-        <activity android:name=".activities.TransferActivity">
-
-        </activity>
-        <activity android:name=".activities.GlobalPositionActivity">
-
-        </activity>
-
-        <activity android:name=".activities.GlobalPositionDetailsActivity">
-
-        </activity>
-
-        <activity android:name=".activities.MovementsActivity">
-
-        </activity>
-
+        <activity android:name=".activities.PasswordActivity" />
+        <activity android:name=".activities.TransferActivity" />
+        <activity android:name=".activities.GlobalPositionActivity" />
+        <activity android:name=".activities.GlobalPositionDetailsActivity" />
+        <activity android:name=".activities.MovementsActivity" />
     </application>
 
 </manifest>
