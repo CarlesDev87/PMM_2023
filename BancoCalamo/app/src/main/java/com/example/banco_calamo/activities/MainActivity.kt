@@ -2,7 +2,10 @@ package com.example.banco_calamo.activities
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
@@ -10,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.preference.PreferenceManager
 import com.example.banco_calamo.R
 import com.example.banco_calamo.databinding.ActivityMainBinding
 import com.example.banco_calamo.bd.MiBancoOperacional
@@ -17,6 +21,7 @@ import com.example.banco_calamo.fragments.AccountsFragment
 import com.example.banco_calamo.fragments.MainFragment
 import com.example.banco_calamo.pojo.Cliente
 import com.google.android.material.navigation.NavigationView
+import java.util.Locale
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -24,12 +29,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
-
+    private var mediaPlayer: MediaPlayer? = null
+    private var position: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -59,6 +66,55 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, frgMain).commit()
             navigationView?.setCheckedItem(R.id.nav_home)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mediaPlayer = MediaPlayer.create(this, R.raw.knight)
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer?.seekTo(position)
+        val sharedPreferences: SharedPreferences =
+            PreferenceManager.getDefaultSharedPreferences(this@MainActivity)
+
+        if (sharedPreferences.getBoolean("musica", true)) {
+            mediaPlayer?.start()
+        } else {
+            mediaPlayer?.pause()
+        }
+
+        val idiomaEn = sharedPreferences.getString("idioma", "en")
+        val idiomaEs = sharedPreferences.getString("idioma", "es")
+
+        if(sharedPreferences.getString("idioma", "en").equals(idiomaEn)) {
+            val locale = Locale(idiomaEn)
+            Locale.setDefault(locale)
+        } else {
+            val locale2 = Locale(idiomaEs)
+            Locale.setDefault(locale2)
+        }
+
+        Log.i("Tema8Act1", "Musica: " + sharedPreferences.getBoolean("musica", false))
+        Log.i("Tema8Act1", "Datos: " + sharedPreferences.getString("datos", ""))
+        Log.i("Tema8Act1", "Idioma: " + sharedPreferences.getString("idioma", ""))
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer?.pause()
+        if (mediaPlayer != null)
+            position = mediaPlayer!!.currentPosition
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayer?.stop()
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

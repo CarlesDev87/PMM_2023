@@ -75,8 +75,9 @@
     <string name="texto_musicaOn">Listen the musica while the application is running</string>
     <string name="textovideo">Don\'t play the video when starting the app</string>
     <string name="textovideoOn">Play a video when the app is starting</string>
-    <string name="txt_titulo_datos">Data origin</string>
+    <string name="txt_titulo_datos">Data</string>
     <string name="servicio_web">Web Services</string>
     <string name="datos_local">Local Data</string>
+    <string name="origendatos">Data Origin</string>
 
 </resources>

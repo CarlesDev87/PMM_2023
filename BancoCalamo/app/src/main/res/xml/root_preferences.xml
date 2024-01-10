@@ -17,33 +17,29 @@
         app:title="@string/multimedia">
 
         <SwitchPreferenceCompat
-            app:key="reproducirMusica"
+            app:key="musica"
             app:summaryOff="@string/texto_musica"
             app:summaryOn="@string/texto_musicaOn"
             app:title="@string/titulo_media" />
         <SwitchPreferenceCompat
-            app:key="reproducirVideo"
+            app:key="video"
             app:summaryOff="@string/textovideo"
             app:summaryOn="@string/textovideoOn"
-            app:title="@string/titulo_video" />
+            app:title="@string/titulo_video"
+            app:defaultValue="true"/>
 
     </PreferenceCategory>
     <PreferenceCategory
-        app:icon="@drawable/ic_data_origin">
+        app:icon="@drawable/ic_data_origin"
+        app:title="@string/txt_titulo_datos">
 
         <ListPreference
             app:dialogTitle="@string/txt_titulo_datos"
             app:entries="@array/datos"
-            app:key="idioma"
-            app:title="@string/idiomaapp"
+            app:key="datos"
+            app:title="@string/origendatos"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
-
-
-
-
-
-
 
 </PreferenceScreen>

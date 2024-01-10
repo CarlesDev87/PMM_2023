@@ -75,7 +75,8 @@
     <string name="texto_musicaOn">Escuchar la música mientras se ejecuta la aplicación</string>
     <string name="textovideo">No reproducir el vídeo al iniciar la aplicación</string>
     <string name="textovideoOn">Reproducir el vídeo al iniciar la aplicación</string>
-    <string name="txt_titulo_datos">Origen de los datos</string>
+    <string name="txt_titulo_datos">Datos</string>
     <string name="servicio_web">Servicios web</string>
     <string name="datos_local">Datos locales</string>
+    <string name="origendatos">Origen de los datos</string>
 </resources>
