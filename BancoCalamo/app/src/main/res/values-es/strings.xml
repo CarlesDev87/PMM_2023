@@ -79,4 +79,11 @@
     <string name="servicio_web">Servicios web</string>
     <string name="datos_local">Datos locales</string>
     <string name="origendatos">Origen de los datos</string>
+    <string name="title_activity_settings">Actividad Configuración</string>
+    <string name="txt_atm">ATM</string>
+    <string name="btn_list_atm">LISTAR ATM</string>
+    <string name="btn_maps_atm">MAPAS ATM</string>
+    <string name="btn_add_atm">AÑADIR ATM</string>
+    <string name="txt_cajeros">Selecciona el Cajero</string>
+    <string name="txt_atm_list">Lista Cajeros</string>
 </resources>

@@ -17,6 +17,7 @@ import androidx.preference.PreferenceManager
 import com.example.banco_calamo.R
 import com.example.banco_calamo.databinding.ActivityMainBinding
 import com.example.banco_calamo.bd.MiBancoOperacional
+import com.example.banco_calamo.entities.CajeroEntity
 import com.example.banco_calamo.fragments.AccountsFragment
 import com.example.banco_calamo.fragments.MainFragment
 import com.example.banco_calamo.pojo.Cliente
@@ -34,9 +35,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
 
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onStart() {
         super.onStart()
-        mediaPlayer = MediaPlayer.create(this, R.raw.knight)
+        // mediaPlayer = MediaPlayer.create(this, R.raw.knight)
     }
 
 
@@ -86,16 +87,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             mediaPlayer?.pause()
         }
 
-        val idiomaEn = sharedPreferences.getString("idioma", "en")
-        val idiomaEs = sharedPreferences.getString("idioma", "es")
+        val idioma = sharedPreferences.getString("idioma", "")
 
-        if(sharedPreferences.getString("idioma", "en").equals(idiomaEn)) {
-            val locale = Locale(idiomaEn)
-            Locale.setDefault(locale)
-        } else {
-            val locale2 = Locale(idiomaEs)
-            Locale.setDefault(locale2)
-        }
+        val locale = Locale(idioma)
+        Locale.setDefault(locale)
+
 
         Log.i("Tema8Act1", "Musica: " + sharedPreferences.getBoolean("musica", false))
         Log.i("Tema8Act1", "Datos: " + sharedPreferences.getString("datos", ""))
@@ -123,12 +119,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val intent = Intent(this, SettingsActivity::class.java)
 
+        val intent2 = Intent(this, AtmManagementActivity::class.java)
+
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, MainFragment.newInstance(cliente)).commit()
 
             R.id.nav_global -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AccountsFragment.newInstance(cliente)).commit()
+
+            R.id.nav_cash -> startActivity(intent2)
 
             R.id.nav_config -> startActivity(intent)
 

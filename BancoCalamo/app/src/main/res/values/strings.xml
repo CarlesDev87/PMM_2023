@@ -79,5 +79,12 @@
     <string name="servicio_web">Web Services</string>
     <string name="datos_local">Local Data</string>
     <string name="origendatos">Data Origin</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="txt_atm">ATM</string>
+    <string name="btn_list_atm">ATM LIST</string>
+    <string name="btn_maps_atm">ATM MAPS</string>
+    <string name="btn_add_atm">ATM ADD</string>
+    <string name="txt_cajeros">Select ATM</string>
+    <string name="txt_atm_list">ATM List</string>
 
 </resources>

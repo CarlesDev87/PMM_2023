@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AtmManagementActivity">
+    
+    <TextView
+        android:id="@+id/titulo_atm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_atm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/common_padding_min"
+        android:textSize="20sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_list_atm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_atm"
+        android:layout_margin="@dimen/common_padding_min"
+        android:text="@string/btn_list_atm"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_atm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_list_atm"
+        android:layout_margin="@dimen/common_padding_min"
+        android:text="@string/btn_add_atm"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_maps_atm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_atm"
+        android:layout_margin="@dimen/common_padding_min"
+        android:text="@string/btn_maps_atm"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

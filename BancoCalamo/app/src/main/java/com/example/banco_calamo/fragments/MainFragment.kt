@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.banco_calamo.R
+import com.example.banco_calamo.activities.AtmListActivity
+import com.example.banco_calamo.activities.AtmManagementActivity
 import com.example.banco_calamo.activities.GlobalPositionActivity
 import com.example.banco_calamo.activities.MovementsActivity
 import com.example.banco_calamo.activities.PasswordActivity
@@ -73,6 +75,11 @@ class MainFragment : Fragment() {
 
         binding.cuartoBoton.setOnClickListener {
             val intent = Intent(this.context, PasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.sextoBoton.setOnClickListener {
+            val intent = Intent(this.context, AtmManagementActivity::class.java)
             startActivity(intent)
         }
 

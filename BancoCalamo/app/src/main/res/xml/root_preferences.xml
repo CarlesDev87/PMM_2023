@@ -22,11 +22,11 @@
             app:summaryOn="@string/texto_musicaOn"
             app:title="@string/titulo_media" />
         <SwitchPreferenceCompat
+            app:defaultValue="true"
             app:key="video"
             app:summaryOff="@string/textovideo"
             app:summaryOn="@string/textovideoOn"
-            app:title="@string/titulo_video"
-            app:defaultValue="true"/>
+            app:title="@string/titulo_video" />
 
     </PreferenceCategory>
     <PreferenceCategory
