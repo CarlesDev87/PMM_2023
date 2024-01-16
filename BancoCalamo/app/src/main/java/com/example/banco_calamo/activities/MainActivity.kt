@@ -19,6 +19,7 @@ import com.example.banco_calamo.databinding.ActivityMainBinding
 import com.example.banco_calamo.bd.MiBancoOperacional
 import com.example.banco_calamo.entities.CajeroEntity
 import com.example.banco_calamo.fragments.AccountsFragment
+import com.example.banco_calamo.fragments.AtmListFragment
 import com.example.banco_calamo.fragments.MainFragment
 import com.example.banco_calamo.pojo.Cliente
 import com.google.android.material.navigation.NavigationView
@@ -119,7 +120,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val intent = Intent(this, SettingsActivity::class.java)
 
-        val intent2 = Intent(this, AtmManagementActivity::class.java)
+
 
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
@@ -128,7 +129,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_global -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AccountsFragment.newInstance(cliente)).commit()
 
-            R.id.nav_cash -> startActivity(intent2)
+            R.id.nav_cash -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,   )
 
             R.id.nav_config -> startActivity(intent)
 

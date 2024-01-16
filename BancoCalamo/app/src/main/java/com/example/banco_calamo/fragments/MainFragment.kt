@@ -6,15 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.banco_calamo.R
-import com.example.banco_calamo.activities.AtmListActivity
 import com.example.banco_calamo.activities.AtmManagementActivity
 import com.example.banco_calamo.activities.GlobalPositionActivity
 import com.example.banco_calamo.activities.MovementsActivity
 import com.example.banco_calamo.activities.PasswordActivity
 import com.example.banco_calamo.activities.TransferActivity
-import com.example.banco_calamo.bd.MiBD
-import com.example.banco_calamo.bd.MiBancoOperacional
 import com.example.banco_calamo.databinding.FragmentMainBinding
 import com.example.banco_calamo.pojo.Cliente
 import java.io.Serializable
