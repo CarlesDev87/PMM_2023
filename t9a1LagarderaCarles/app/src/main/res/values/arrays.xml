@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="tipo_coche_array">
+        <item>UTILITARIO</item>
+        <item>BERLINA</item>
+        <item>SUV</item>
+    </array>
+</resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgRaqueta"
+            android:layout_width="0dp"
+            android:layout_height="102dp"
+            android:contentDescription="Imagen de la raqueta"
+            android:background="#9403A9F4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txtMarca"
+            />
+        <TextView
+            android:id="@+id/txtMarca"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txtMarca"
+            android:background="@color/red_transparent"
+            android:paddingStart="@dimen/margin_comun"
+            android:layout_marginTop="@dimen/margin_comun"
+            />
+        <TextView
+            android:id="@+id/txtModelo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtMarca"
+            android:background="@color/red_transparent"
+            android:paddingStart="@dimen/margin_comun"
+            />
+        <TextView
+            android:id="@+id/txtDireccion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtModelo"
+            android:background="@color/red_transparent"
+            android:paddingStart="@dimen/margin_comun"
+            />
+        <TextView
+            android:id="@+id/txtTipoLavado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDireccion"
+            android:background="@color/red_transparent"
+            android:paddingStart="@dimen/margin_comun"
+            />
+        <TextView
+            android:id="@+id/txtTipoVehiculo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTipoLavado"
+            android:background="@color/red_transparent"
+            android:paddingStart="@dimen/margin_comun"
+            />
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbfavourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/state_cb_favourite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

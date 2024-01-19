@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azul_claro"
+    tools:context=".fragment.EditarLavadoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_comun">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_comun"
+            android:hint="Marca de coche"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:endIconMode="clear_text"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/coche">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tie_marca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D6D3D3"
+                android:paddingStart="50dp"
+                android:inputType="textCapWords"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_comun"
+            android:hint="Modelo de coche"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:endIconMode="clear_text"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/coche">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tie_modelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="50dp"
+                android:background="#D6D3D3"
+                android:inputType="textCapWords"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_comun"
+            android:hint="Dirección del cliente"
+            app:counterEnabled="true"
+            app:counterMaxLength="200"
+            app:endIconMode="clear_text"
+            app:helperText="Requerido"
+            app:startIconDrawable="@drawable/ic_direccion_cliente">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tie_direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="50dp"
+                android:maxLines="2"
+                android:background="#D6D3D3"
+                android:inputType="textCapWords"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/tipoCocheSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_comun"
+            android:entries="@array/tipo_coche_array" />
+        <Spinner
+            android:id="@+id/tipoLavadoSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_comun"/>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
