@@ -8,21 +8,22 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import com.example.t9a1_lagardera_carles.LavadoApplication
-import com.example.t9a1_lagardera_carles.activities.MainActivity
 import com.example.t9a1_lagardera_carles.R
+import com.example.t9a1_lagardera_carles.activities.MainActivity
 import com.example.t9a1_lagardera_carles.databinding.FragmentEditarLavadoBinding
 import com.example.t9a1_lagardera_carles.entities.LavadoCoche
 import com.google.android.material.snackbar.Snackbar
 import java.util.concurrent.LinkedBlockingQueue
 
 
+class UpdateLavadoFragment : Fragment() {
 
-class EditarLavadoFragment : Fragment() {
+
 
     private lateinit var binding: FragmentEditarLavadoBinding
     private var mActivity: MainActivity? = null
+1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +44,7 @@ class EditarLavadoFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
 
-        inflater.inflate(R.menu.menu_config, menu)
+        inflater.inflate(R.menu.menu_update, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
@@ -53,7 +54,7 @@ class EditarLavadoFragment : Fragment() {
                 requireActivity().onBackPressed()
                 true
             }
-            R.id.action_guardar -> {  // GUARDAREMOS LA INFO EN LA BASE DE DATOS
+            R.id.action_update -> {  // GUARDAREMOS LA INFO EN LA BASE DE DATOS
 
                 val lavado = LavadoCoche(marca = binding.tieMarca.text.toString().trim(), modelo = binding.tieModelo.text.toString().trim(), direccion = binding.tieDireccion.text.toString(), meGusta = false)
 
@@ -77,7 +78,6 @@ class EditarLavadoFragment : Fragment() {
 
     }
 
-
     override fun onDestroy() {
         mActivity?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         mActivity?.supportActionBar?.title = getString(R.string.app_name)
@@ -85,6 +85,7 @@ class EditarLavadoFragment : Fragment() {
         setHasOptionsMenu(false)
         super.onDestroy()
     }
+
 
 
 }

@@ -15,15 +15,5 @@ data class LavadoCoche(
 
 ) {
 
-    enum class TipoLavado(val precio: Int) {
-        ESTANDARD(40),
-        DELUXE(70),
-        SUPREME(100)
-    }
 
-    enum class TipoCoche(val tipo: String, val suplemento: Int, val foto: Int) {
-        UTILITARIO("UTILITARIO", 0, R.drawable.utilitario),
-        BERLINA("BERLINA", 10, R.drawable.berlina),
-        SUV("SUV", 20, R.drawable.suv)
-    }
 }

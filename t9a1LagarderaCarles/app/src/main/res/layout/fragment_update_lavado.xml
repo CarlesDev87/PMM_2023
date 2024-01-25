@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul_claro"
-    tools:context=".fragment.EditarLavadoFragment">
+    tools:context=".fragment.UpdateLavadoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             app:startIconDrawable="@drawable/coche">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_marca"
+                android:id="@+id/tie_marca_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#D6D3D3"
@@ -48,7 +48,7 @@
             app:startIconDrawable="@drawable/coche">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_modelo"
+                android:id="@+id/tie_modelo_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="50dp"
@@ -71,7 +71,7 @@
             app:startIconDrawable="@drawable/coche">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_direccion"
+                android:id="@+id/tie_matricula_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="50dp"

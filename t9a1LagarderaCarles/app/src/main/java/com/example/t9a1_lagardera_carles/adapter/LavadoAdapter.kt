@@ -26,16 +26,37 @@ class LavadoAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val lavado = lavados.get(position)
 
-        with(holder){
+        with(holder) {
             setListener(lavado)
-            binding.imgRaqueta.setImageResource(R.drawable.coche)
+            binding.imgRaqueta.setImageResource(R.drawable.berlina)
             binding.txtMarca.text = "Marca: ${lavado.marca}"
-            binding.txtModelo.text =  "Modelo: ${lavado.modelo}"
-            binding.txtDireccion.text = "Dirección:  ${lavado.direccion }"
-
+            binding.txtModelo.text = "Modelo: ${lavado.modelo}"
+            binding.txtDireccion.text = "Dirección:  ${lavado.direccion}"
         }
 
     }
+
+    fun add(lavado: LavadoCoche) {
+        lavados.add(lavado)
+        notifyDataSetChanged()
+    }
+
+    fun update(lavado: LavadoCoche) {
+        val index = lavados.indexOf(lavado)
+        if (index != -1) {
+            lavados.set(index, lavado)
+            notifyItemChanged(index)
+        }
+    }
+
+    fun delete(lavado: LavadoCoche) {
+        val index = lavados.indexOf(lavado)
+        if (index != -1) {
+            lavados.removeAt(index)
+            notifyItemRemoved(index)
+        }
+    }
+
 
     override fun getItemCount(): Int = lavados.size
     fun setLavados(lavado: MutableList<LavadoCoche>) {
@@ -47,8 +68,19 @@ class LavadoAdapter(
         val binding = ItemLavadosBinding.bind(view)
 
         fun setListener(lavado: LavadoCoche) {
-            binding.root.setOnClickListener {
-                listener.onClick(lavado)
+
+            with(binding.root) {
+                setOnClickListener {
+                    listener.onClick(lavado)
+                }
+                setOnLongClickListener {
+                    listener.onDeleteLavado(lavado)
+                    true
+                }
+            }
+
+            binding.cbfavourite.setOnClickListener {
+                listener.onFavouriteLavado(lavado)
             }
         }
     }

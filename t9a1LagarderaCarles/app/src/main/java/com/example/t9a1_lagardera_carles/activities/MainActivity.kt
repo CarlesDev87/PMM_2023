@@ -16,6 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue
 
 class MainActivity : AppCompatActivity(), onClickListener, MainAux {
 
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var lAdapter: LavadoAdapter
     private lateinit var linearLayout: LinearLayoutManager
@@ -60,6 +61,31 @@ class MainActivity : AppCompatActivity(), onClickListener, MainAux {
         }.start()
 
         lAdapter.setLavados( queue.take())
+    }
+
+    override fun addLavado(lavado: LavadoCoche) {
+        lAdapter.add(lavado)
+    }
+
+    override fun onFavouriteLavado(lavado: LavadoCoche) {
+        lavado.meGusta = !lavado.meGusta
+        val queue = LinkedBlockingQueue<LavadoCoche>()
+
+        Thread{
+            LavadoApplication.database.lavadoDao().updateLavado(lavado)
+            queue.add(lavado)
+        }.start()
+        lAdapter.update(queue.take())
+    }
+
+    override fun onDeleteLavado(lavado: LavadoCoche) {
+
+        val queue = LinkedBlockingQueue<LavadoCoche>()
+        Thread{
+            LavadoApplication.database.lavadoDao().deleteLavado(lavado)
+            queue.add(lavado)
+        }.start()
+        lAdapter.update(queue.take())
     }
 
     override fun onClick(lavadoCoche: LavadoCoche) {

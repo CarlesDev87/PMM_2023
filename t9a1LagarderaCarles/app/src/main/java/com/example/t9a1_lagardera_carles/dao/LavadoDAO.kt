@@ -12,12 +12,20 @@ interface LavadoDAO {
 
     @Query("SELECT * FROM lavados")
     fun getAllLavados() : MutableList<LavadoCoche>
+
+    @Query("SELECT * FROM lavados WHERE id = :id")
+    fun getLavadoById(id: Long): LavadoCoche
+
     @Insert
     fun insertAll(lavadoCocheList : List<LavadoCoche>)
+
     @Insert
     fun addLavado(lavadoCoche: LavadoCoche) : Long
+
     @Update
     fun updateLavado(lavadoCoche: LavadoCoche)
+
     @Delete
     fun deleteLavado(lavadoCoche: LavadoCoche)
+
 }
