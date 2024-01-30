@@ -9,6 +9,7 @@ import com.example.t10a1_lagardera_carles.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: HogwartsAdapter
-    private val hogwartsPersonajes = mutableListOf<String>()
+    private val hogwartsPersonajes = mutableListOf<HogwartsResponse>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView()
+        getCharacters()
 
     }
 
@@ -43,42 +45,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getCharacters() {
-
         CoroutineScope(Dispatchers.IO).launch {
-            val llamada: Response<HogwartsResponse> = getRetrofit().create(APIService::class.java)
-                .getCharacters("https://hp-api.onrender.com/api/characters")
-            val personajes: HogwartsResponse? = llamada.body()
 
-            runOnUiThread {
+            val response: Response<List<HogwartsResponse>> =
+                getRetrofit().create(APIService::class.java)
+                    .getCharacters(
+                        "https://hp-api.onrender.com/api/characters"
+                    )
 
-                if (llamada.isSuccessful) {
-                    val nombre: String? = personajes?.nombre ?: ""
-                    val especie: String? = personajes?.especie ?: ""
-                    val ancestro: String? = personajes?.ancestro ?: ""
-                    val patronus: String? = personajes?.patrono ?: ""
-                    val imagen: String? = personajes?.url ?: ""
-                    hogwartsPersonajes.clear()
-                    if (nombre != null) {
-                        hogwartsPersonajes.addAll(mutableListOf(nombre))
-                    }
-                    if (especie != null) {
-                        hogwartsPersonajes.addAll(mutableListOf(especie))
-                    }
-                    if (ancestro != null) {
-                        hogwartsPersonajes.addAll(mutableListOf(ancestro))
-                    }
-                    if (patronus != null) {
-                        hogwartsPersonajes.addAll(mutableListOf(patronus))
-                    }
-                    if (imagen != null) {
-                        hogwartsPersonajes.addAll(mutableListOf(imagen))
-                    }
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
+                    val personajes: List<HogwartsResponse>? = response.body()
 
-                    adapter.notifyDataSetChanged()
+                    if (personajes != null) {
+                        hogwartsPersonajes.clear()
+                        hogwartsPersonajes.addAll(personajes)
+                        adapter.notifyDataSetChanged()
+                    } else {
+                        showError()
 
-                } else {
-                    showError()
+                    }
                 }
+
+
             }
         }
     }
@@ -89,3 +78,5 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
+

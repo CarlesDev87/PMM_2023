@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 
-class HogwartsAdapter(val personajes: List<String>) : RecyclerView.Adapter<HogwartsViewHolder>() {
+class HogwartsAdapter(private val personajes: MutableList<HogwartsResponse>) :
+    RecyclerView.Adapter<HogwartsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HogwartsViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return HogwartsViewHolder(layoutInflater.inflate(R.layout.item_hogwarts, parent, false))

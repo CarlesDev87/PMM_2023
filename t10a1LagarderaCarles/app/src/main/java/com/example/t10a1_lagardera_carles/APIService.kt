@@ -6,6 +6,6 @@ import retrofit2.http.Url
 
 interface APIService {
     @GET
-    suspend fun getCharacters(@Url url:String): Response<HogwartsResponse>
+    suspend fun getCharacters(@Url url:String): Response<List<HogwartsResponse>>
 
 }

@@ -8,9 +8,11 @@ import com.squareup.picasso.Picasso
 
 class HogwartsViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val binding = ItemHogwartsBinding.bind(view)
-    fun bind(image: String, nombre: String, especie: String, patrono: String) {
-        Picasso.get().load(image).into(binding.img)
-        binding
+    fun bind(personaje: HogwartsResponse) {
+        Picasso.get().load(personaje.url).into(binding.img)
+        binding.txtNombre.text = personaje.nombre
+        binding.txtEspecie.text = personaje.especie
+        binding.txtPatronus.text = personaje.patrono
 
     }
 }
